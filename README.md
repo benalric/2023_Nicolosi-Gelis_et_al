@@ -6,8 +6,8 @@
 ## Overview
 
 In this repository, you will find two tutorials:
-i. one explaining how we processed metabarcoding data (rRNA 16S and 23S) to report on the genetic diversity of phytoplankton in four French peri-alpine lakes. 
-ii. another explaining the subsequent statistical analyzes performed with metabarcoding data.
+<br/>i. one explaining how we processed metabarcoding data (rRNA 16S and 23S) to report on the genetic diversity of phytoplankton in four French peri-alpine lakes. 
+<br/>ii. another explaining the subsequent statistical analyzes performed with metabarcoding data.
 
 Data analysis was done using R version 4.2.1. This document was compiled with the rmarkdown package version 2.8. This tutorial is licensed under CC BY-NC-ND 4.0, which means you are free to share, copy and redistribute this tutorial in any medium or format under the terms of attribution of appropriate credit, non-commercial purposes and no derivatives.
 
