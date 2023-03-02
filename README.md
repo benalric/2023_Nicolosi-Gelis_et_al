@@ -17,8 +17,8 @@ The data were produced as part of the article:
 
 ## Utilization
 
-i. We can access the script for bioinformatic analysis [here](https://raw.githack.com/benalric/2023_Nicolosi-Gelis_STOTEN/main/DADA2_pipeline_phytoplankton_16S_23S.html)
-<br/>ii. We can access the script for 23S rRNA analyzes [here](https://raw.githack.com/benalric/2023_Nicolosi-Gelis_STOTEN/main/Statistical_analysis_phytoplankton.html)
+i. We can access the script for bioinformatic analyzes [here](https://raw.githack.com/benalric/2023_Nicolosi-Gelis_STOTEN/main/DADA2_pipeline_phytoplankton_16S_23S.html)
+<br/>ii. We can access the script for statistical analyzes [here](https://raw.githack.com/benalric/2023_Nicolosi-Gelis_STOTEN/main/Statistical_analysis_phytoplankton.html)
 
 ## Version of packages used to create the web application
 ```r
