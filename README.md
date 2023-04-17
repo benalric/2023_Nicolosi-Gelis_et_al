@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# 2023_Nicolosi-Gelis_STOTEN
+# 2023_Nicolosi-Gelis_et_al.
 
 ## Overview
 
