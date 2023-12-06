@@ -7,7 +7,7 @@
 
         <meta name="author" content="Benjamin Alric" />
     
-        <meta name="date" content="2023-03-13" />
+        <meta name="date" content="2023-12-06" />
     
     <title>Statistical analyzes to compare metabarcoding and microscopy data for lake phytoplankton</title>
 
@@ -1294,7 +1294,7 @@ and microscopy data for lake phytoplankton</a></h2>
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
                   <p class="author"><span class="glyphicon glyphicon-user"></span> Benjamin
 Alric</p>
-                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2023-03-13</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> 2023-12-06</p>
           </div>
    </div>
      
@@ -1340,7 +1340,7 @@ packages</h1>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(testMol23s) <span class="ot">&lt;-</span> Mol23S<span class="sc">$</span>Genus_species</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>testMol23s <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(testMol23s)</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Taxonomic-free data</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>Mol16S_TF <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;OLA_16S_taxonomic_free.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>Mol16S_TF <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;OLA_taxonomic_free_16S.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert reads number in relative abundances:</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(Mol16S_TF))) {</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    Mol16S_TF[, i] <span class="ot">&lt;-</span> Mol16S_TF[, i]<span class="sc">/</span><span class="fu">sum</span>(Mol16S_TF[, i], <span class="at">na.rm =</span> T) <span class="sc">*</span> <span class="dv">100</span></span>
@@ -1349,7 +1349,7 @@ packages</h1>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(AIG0121<span class="sc">:</span>LEM1821))</span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(testMol16S_TF) <span class="ot">&lt;-</span> Mol16S_TF<span class="sc">$</span>X</span>
 <span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>testMol16S_TF <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(testMol16S_TF)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>Mol23S_TF <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;OLA_23S_taxonomic_free.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>Mol23S_TF <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;OLA_taxonomic_free_23S.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>testMol23S_TF <span class="ot">&lt;-</span> <span class="fu">t</span>(Mol23S_TF <span class="sc">%&gt;%</span></span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(AIG0121<span class="sc">:</span>LEM1821))</span>
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(testMol23S_TF) <span class="ot">&lt;-</span> Mol23S_TF<span class="sc">$</span>X</span>
@@ -1424,7 +1424,7 @@ distances in the factorial plan of co-inertia analysis</h1>
 <span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    df_MO23S_TF<span class="sc">$</span>euclid_dist)</span>
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(eucli_dist) <span class="ot">&lt;-</span> <span class="fu">rownames</span>(testMicro)</span>
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(eucli_dist) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">&quot;Microscopy vs. </span><span class="sc">\n</span><span class="st"> 16S rRNA_assign&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>), <span class="fu">paste</span>(<span class="st">&quot;Microscopy vs. </span><span class="sc">\n</span><span class="st"> 16S rRNA_taxafree&quot;</span>,</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;&quot;</span>), <span class="fu">paste</span>(<span class="st">&quot;Microscopy vs. </span><span class="sc">\n</span><span class="st"> 23 rRNA_assign&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>), <span class="fu">paste</span>(<span class="st">&quot;Microscopy vs. </span><span class="sc">\n</span><span class="st"> 23S rRNA_taxafree&quot;</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;&quot;</span>), <span class="fu">paste</span>(<span class="st">&quot;Microscopy vs. </span><span class="sc">\n</span><span class="st"> 23S rRNA_assign&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>), <span class="fu">paste</span>(<span class="st">&quot;Microscopy vs. </span><span class="sc">\n</span><span class="st"> 23S rRNA_taxafree&quot;</span>,</span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">&quot;&quot;</span>))</span>
 <span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Put table in tidy format</span></span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>eucli_dist_tidy <span class="ot">&lt;-</span> eucli_dist <span class="sc">%&gt;%</span></span>
@@ -1439,12 +1439,13 @@ distances in the factorial plan of co-inertia analysis</h1>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">las =</span> <span class="dv">1</span>, <span class="co"># to rotate the labels of y axis (2 for x axis)</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">cex.axis =</span> <span class="fl">1.5</span>, </span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">cex.lab =</span> <span class="fl">1.5</span>,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.8</span>))</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span> <span class="dv">1</span>, <span class="at">y=</span> <span class="fl">1.8</span>, <span class="at">labels=</span> <span class="st">&quot;a&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span> <span class="dv">2</span>, <span class="at">y=</span> <span class="fl">1.8</span>, <span class="at">labels=</span> <span class="st">&quot;a&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span> <span class="dv">3</span>, <span class="at">y=</span> <span class="fl">1.8</span>, <span class="at">labels=</span> <span class="st">&quot;a&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span> <span class="dv">4</span>, <span class="at">y=</span> <span class="fl">1.8</span>, <span class="at">labels=</span> <span class="st">&quot;a&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">1.8</span>),</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span> <span class="dv">1</span>, <span class="at">y=</span> <span class="fl">1.8</span>, <span class="at">labels=</span> <span class="st">&quot;a&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span> <span class="dv">2</span>, <span class="at">y=</span> <span class="fl">1.8</span>, <span class="at">labels=</span> <span class="st">&quot;a&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span> <span class="dv">3</span>, <span class="at">y=</span> <span class="fl">1.8</span>, <span class="at">labels=</span> <span class="st">&quot;a&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x=</span> <span class="dv">4</span>, <span class="at">y=</span> <span class="fl">1.8</span>, <span class="at">labels=</span> <span class="st">&quot;a&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
 </div>
 </div>
 <div id="version-of-packages-used-to-build-this-document" class="section level1" number="9">
